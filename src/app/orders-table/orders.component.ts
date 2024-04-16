@@ -52,7 +52,7 @@ export class OrdersComponent implements OnInit {
         isSortable: true
       },
       {
-        name: 'amount',
+        name: 'amount book',
         dataKey: 'amount',
         position: 'right',
         isSortable: true

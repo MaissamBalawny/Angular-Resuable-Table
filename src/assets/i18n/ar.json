@@ -4,7 +4,7 @@
 "Orders" :"الطلبات" ,
 "test":"اختبار" ,
 "book name":"اسم الكتاب",
-"amount" :" كمية الطلب",
+"amount book" :" كمية الطلب",
 "book price" :"سعر الكتاب",
 "book discount":"التخفيض على السعر"
 }

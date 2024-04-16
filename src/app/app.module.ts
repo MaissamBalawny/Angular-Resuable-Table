@@ -12,7 +12,6 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import {CustomersComponent} from './customers-table/customers.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -27,8 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
     AppComponent,
     OrdersComponent,
     TableComponent,
-    DataPropertyGetterPipe,
-    CustomersComponent
+    DataPropertyGetterPipe
   ],
   imports: [
     BrowserModule,
