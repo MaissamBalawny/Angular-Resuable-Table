@@ -36,6 +36,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
   }
+ 
 
   ngOnInit(): void {
     const columnNames = this.tableColumns.map((tableColumn: TableColumn) => tableColumn.name);
@@ -50,6 +51,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.tableDataSource.paginator = this.matPaginator;
   }
+
 
 
   setTableDataSource(data: any) {

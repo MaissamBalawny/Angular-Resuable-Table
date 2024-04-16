@@ -3,6 +3,7 @@ import {Order} from './order';
 import {TableColumn} from '../table/TableColumn';
 import {CurrencyPipe, DecimalPipe, PercentPipe} from '@angular/common';
 import {Sort} from '@angular/material/sort';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-orders',
@@ -13,13 +14,16 @@ import {Sort} from '@angular/material/sort';
 export class OrdersComponent implements OnInit {
   orders: Order[];
   ordersTableColumns: TableColumn[];
+  lang : string  ='' ;
 
   constructor(private currencyPipe: CurrencyPipe,
               private decimalPipe: DecimalPipe,
-              private percentPipe: PercentPipe) {
+              private percentPipe: PercentPipe ,
+            private translate : TranslateService) {translate.setDefaultLang('en');
   }
 
   ngOnInit(): void {
+    this.lang = localStorage.getItem('lang') || 'en'
     this.initializeColumns();
     this.orders = this.getOrders();
   }
@@ -48,10 +52,10 @@ export class OrdersComponent implements OnInit {
         isSortable: true
       },
       {
-        name: 'ordered amount',
+        name: 'amount',
         dataKey: 'amount',
         position: 'right',
-        isSortable: false
+        isSortable: true
       },
       {
         name: 'book price',
@@ -60,10 +64,10 @@ export class OrdersComponent implements OnInit {
         isSortable: true
       },
       {
-        name: 'book discount',
-        dataKey: 'discount',
+        name:'book discount',
+        dataKey:'discount',
         position: 'right',
-        isSortable: false
+        isSortable: true
       },
     ];
   }
@@ -107,4 +111,5 @@ export class OrdersComponent implements OnInit {
       }
     ];
   }
+
 }

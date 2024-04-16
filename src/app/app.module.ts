@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {OrdersComponent} from './orders-table/orders.component';
@@ -15,6 +14,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {CustomersComponent} from './customers-table/customers.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MatSelectModule } from '@angular/material/select';
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -34,7 +40,19 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatSortModule,
     MatIconModule,
     MatButtonModule,    
-    MatTabsModule 
+    MatTabsModule ,
+    HttpClientModule,
+    TranslateModule ,
+    MatSelectModule,
+    MatFormFieldModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+    }
+    }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
