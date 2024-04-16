@@ -3,6 +3,7 @@ import {TableColumn} from './TableColumn';
 import {MatSort, Sort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'custom-table',
@@ -32,7 +33,8 @@ export class TableComponent implements OnInit, AfterViewInit {
     this.setTableDataSource(data);
   }
 
-  constructor() {
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('en');
   }
 
   ngOnInit(): void {
@@ -70,5 +72,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   emitRowAction(row: any) {
     this.rowAction.emit(row);
   }
-
+  switchLanguage(language: string) {
+    this.translate.use(language);
+  }
 }

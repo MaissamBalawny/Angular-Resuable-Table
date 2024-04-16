@@ -33,8 +33,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    MatButtonModule,
-    MatTabsModule
+    MatButtonModule,    
+    MatTabsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
